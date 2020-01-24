@@ -1,9 +1,9 @@
 ﻿using System;
 namespace GymApp.Models
 {
-    public class Program
+    public class Exercise
     {
-        public Program()
+        public Exercise()
         {
         }
 

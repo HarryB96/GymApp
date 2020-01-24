@@ -8,12 +8,14 @@ namespace GymApp
     {
         string dbPath => FileAccessHelper.GetLocalFilePath("gym.db3");
         internal static OneRepMaxRepository ORMRepo { get; private set; }
+        internal static ExerciseRepository ExerciseRepo { get; private set; }
 
         public App()
         {
             InitializeComponent();
             ORMRepo = new OneRepMaxRepository(dbPath);
-            MainPage = new MainPage();
+            ExerciseRepo = new ExerciseRepository(dbPath);
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

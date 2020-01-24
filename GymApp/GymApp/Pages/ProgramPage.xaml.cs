@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
+using GymApp.Models;
 
 namespace GymApp.Pages
 {
@@ -10,6 +10,12 @@ namespace GymApp.Pages
         public ProgramPage()
         {
             InitializeComponent();
+            Initialise();
+        }
+        public async void Initialise()
+        {
+            List<Exercise> Program = await App.ExerciseRepo.GetProgramAsync();
+            ProgramList.ItemsSource = Program;
         }
     }
 }
