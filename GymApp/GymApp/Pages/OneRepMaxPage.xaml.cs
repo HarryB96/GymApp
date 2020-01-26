@@ -8,6 +8,8 @@ namespace GymApp.Pages
 {
     public partial class OneRepMaxPage : ContentPage
     {
+        List<OneRepMax> OneRepMaxes = new List<OneRepMax>();
+
         public OneRepMaxPage()
         {
             InitializeComponent();
@@ -35,8 +37,8 @@ namespace GymApp.Pages
         public async void Initialise()
         {
             exerciseEntry.Text = string.Empty;
-            List<OneRepMax> oneRepMaxes = await App.ORMRepo.GetOneRepMaxesAsync();
-            OneRepMaxList.ItemsSource = oneRepMaxes;
+            OneRepMaxes = await App.ORMRepo.GetOneRepMaxesAsync();
+            OneRepMaxList.ItemsSource = OneRepMaxes;
             Clear();
         }
 
@@ -54,6 +56,11 @@ namespace GymApp.Pages
         {
             var item = e.Item as OneRepMax;
             await Navigation.PushAsync(new OneRepMaxDetailPage(item), true);
+        }
+        protected override void OnAppearing()
+        {
+            Initialise();
+            base.OnAppearing();
         }
     }
 }

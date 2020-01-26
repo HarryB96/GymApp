@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymApp.Pages.DayPage">
+    <ContentPage.Content>
+        <ListView x:Name="ProgramList" HasUnevenRows="True" ItemTapped="ProgramList_ItemTapped">
+            <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding ExerciseName}" FontSize="Large"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Orientation="Horizontal" Grid.Column="0">
+                                        <Label Text="Sets:" FontSize="Medium"/>
+                                        <Label Text="{Binding Sets}" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Grid.Column="1">
+                                        <Label Text="Reps:" FontSize="Medium"/>
+                                        <Label Text="{Binding Reps}" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Grid.Column="2">
+                                        <Label Text="Weight:" FontSize="Medium"/>
+                                        <Label Text="{Binding Weight}" FontSize="Medium"/>
+                                    </StackLayout>
+                                </Grid>
+                                <Label Text="{Binding Superset}" FontSize="Medium" TextColor="Green"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
