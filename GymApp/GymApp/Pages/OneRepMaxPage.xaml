@@ -23,8 +23,8 @@
             <Label Text="Weight" Grid.Row="1" Grid.Column="1" FontSize="Large"/>
             <Label Text="Reps" Grid.Row="2" Grid.Column="1" FontSize="Large"/>
             <Label Text="1RM" Grid.Row="3" Grid.Column="1" FontSize="Large"/>
-            <Editor x:Name="WeightEditor" Grid.Row="1" Grid.Column="3"/>
-            <Editor x:Name="RepsEditor" Grid.Row="2" Grid.Column="3"/>
+            <Editor x:Name="WeightEditor" Grid.Row="1" Grid.Column="3" Keyboard="Numeric"/>
+            <Editor x:Name="RepsEditor" Grid.Row="2" Grid.Column="3" Keyboard="Numeric"/>
             <Editor x:Name="ORMEditor" Grid.Row="3" Grid.Column="3" IsReadOnly="True"/>
             <Button x:Name="ClaculateButton" Text="Calculate" Grid.Row="4" Grid.Column="1" Clicked="ClaculateButton_Clicked"/>
             <Button x:Name="ClearButton" Text="Clear" Grid.Row="4" Grid.Column="3" IsEnabled="False" Clicked="ClearButton_Clicked"/>

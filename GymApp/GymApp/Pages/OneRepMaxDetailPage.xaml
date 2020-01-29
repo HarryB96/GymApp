@@ -21,8 +21,8 @@
             <Label Text="Reps" FontSize="Large" Grid.Column="1" Grid.Row="1" VerticalOptions="CenterAndExpand"/>
             <Label Text="Weight" FontSize="Large" Grid.Column="1" Grid.Row="2" VerticalOptions="CenterAndExpand"/>
             <Editor x:Name="ORMOutPut" Grid.Column="3" Grid.Row="0" IsReadOnly="True"/>
-            <Editor x:Name="RepsEditor" Grid.Column="3" Grid.Row="1" IsReadOnly="True"/>
-            <Editor x:Name="WeightEditor" Grid.Column="3" Grid.Row="2" IsReadOnly="True"/>
+            <Editor x:Name="RepsEditor" Grid.Column="3" Grid.Row="1" IsReadOnly="True" Keyboard="Numeric"/>
+            <Editor x:Name="WeightEditor" Grid.Column="3" Grid.Row="2" IsReadOnly="True" Keyboard="Numeric"/>
             <Button x:Name="EditButton" Text="Edit" Grid.Row="5" Grid.Column="1" Clicked="EditButton_Clicked"/>
             <Button x:Name="DeleteButton" Text="Delete" Grid.Row="5" Grid.Column="3" Clicked="DeleteButton_Clicked"/>
         </Grid>
